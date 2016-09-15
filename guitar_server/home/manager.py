@@ -14,11 +14,13 @@ class manager():
 
     def __init__(self):
         ports = list(serial.tools.list_ports.comports())
-        for p in ports:
-            pDict = dict((y, x) for x, y in p)
-            if pDict["product"] == "Digispark Serial":
-                print pDict["device"]
-                self.port = pDict["device"]
+
+        for idx in range(len(ports)):
+
+            pDict =ports[idx]
+            if pDict.product == "Digispark Serial":
+                print pDict.device
+                self.port = pDict.device
                 self.ser = serial.Serial(self.port)
 
             if self.port == "":
