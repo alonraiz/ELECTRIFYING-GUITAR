@@ -182,7 +182,14 @@ var Game = Backbone.View.extend({
       this.trigger('score', {score: highScore, bubble: bestBubble});
       bestBubble.beenHit = true;
     } else {
+      // MISS:
       $("html").toggleClass("miss", true);
+      $.ajax({
+        method: 'GET',
+        url: '/fire'
+      }).done(function(res) {
+
+      });
       setTimeout(function(){
         $("html").toggleClass("miss", false);
       }, 1000);
