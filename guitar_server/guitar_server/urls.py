@@ -17,7 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from home import views
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^fire', views.fire),
     url(r'^$', views.index),
 ]
