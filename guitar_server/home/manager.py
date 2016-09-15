@@ -15,7 +15,7 @@ class manager():
     def __init__(self):
         ports = list(serial.tools.list_ports.comports())
         for p in ports:
-            pDict = p.__dict__
+            pDict = dict((y, x) for x, y in p)
             if pDict["product"] == "Digispark Serial":
                 print pDict["device"]
                 self.port = pDict["device"]
