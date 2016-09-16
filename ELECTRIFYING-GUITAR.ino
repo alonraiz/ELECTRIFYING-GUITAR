@@ -13,9 +13,9 @@ void loop() {
     char input = SerialUSB.read();
     if(input == '1'){
       digitalWrite(5, HIGH);    // Turn the relay on
-      delay(1000);              // Wait for a second
+      delay(500);              // Wait for a second
       digitalWrite(5, LOW);     // Turn the relay off
-      delay(1000);              // Wait for a second
+      //delay(1000);              // Wait for a second
     }
       
   }
