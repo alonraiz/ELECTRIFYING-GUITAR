@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from manager import manager
 
-x = manager()
+#x = manager()
 
 def index(request):
     context = {}
@@ -11,5 +11,6 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def fire(request):
-    x.onFails()
-    return HttpResponse("")
+	x = manager() #getObj()
+	x.onFails()
+	return HttpResponse("")
